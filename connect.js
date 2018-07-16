@@ -124,7 +124,7 @@ function dominantEmotion() {
         $('body').css("background-color", "yellow");
     } 
     else if (domEmotion == "sadness") {
-        $('body').css("background-color", "blue");
+        $('body').css("background-color", "AliceBlue");
     } 
     else if (domEmotion == "disgust") {
         $('body').css("background-color", "green");
