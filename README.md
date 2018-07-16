@@ -6,9 +6,9 @@
   Affectiva also has a camera detector for emotions, but as of writing this my webcam is busted. If I do get said webcam fixed, I don't believe coding in the functionality should be difficult, especially after figuring out how to use the image detecto in Affectiva.
 
 Sometimes Affectiva nails it.
-![Alt text](/relative/path/to/test2.png?raw=true "Optional Title")
-![Alt text](/relative/path/to/test2After.png?raw=true "Optional Title")
+![Alt text](/relative/path/to/test2.jpg?raw=true "Optional Title")
+![Alt text](/relative/path/to/test2After.jpg?raw=true "Optional Title")
 
 Other times...not so much
-![Alt text](/relative/path/to/test.png?raw=true "Optional Title")
-![Alt text](/relative/path/to/testAfter.png?raw=true "Optional Title")
+![Alt text](/relative/path/to/test.jpg?raw=true "Optional Title")
+![Alt text](/relative/path/to/testAfter.jpg?raw=true "Optional Title")
