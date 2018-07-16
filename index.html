@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0,user-scalable=no"><!-- ==$0 -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Sometimes, you just need a little inspiration.</title>
+        <link rel="stylesheet" href="styles.css">
+        <!--get jQuery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!--get Affectiva SDK-->
+        <script src="https://download.affectiva.com/js/3.2/affdex.js"/></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"/></script>
+        <!--get Affectiva CSS code-->
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    </head>
+    <body>
+        <div class="clickables">
+            <button id="scan" type="button" class="top-button" onclick="onStart()">Scan</button>
+            <button id="stop" type="button" class="top-button" onclick="onStop()">Stop</button>
+            <button id="reset" type="button" class="top-button" onclick="onReset()">Reset</button>
+        </div>
+        <div id="greeting" >
+           How have you been feeling today? Let's have a look at a picture. 
+           
+           Make sure it's a close up frontal view, or we may not detect a face.
+        </div>
+        <canvas id="canvas" width="720" height="720">
+
+        </canvas>
+        <div id="quoteDiv">
+
+        </div>
+        <p id="results"></p>
+        
+        <input type="file" name="i" id="please">
+       
+
+    </body>
+    <script src="connect.js"></script>
+    
+</html> 

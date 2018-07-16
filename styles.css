@@ -1,0 +1,63 @@
+/*Button stuff*/
+.clickables{
+    display:flex;
+    justify-content:center;
+    align-items: flex-end;
+    margin-top:3%;
+}
+
+.top-button{
+    padding:10px 15px;
+    border-radius:5px;
+    margin-right:50px;
+    font-size:18px; 
+}
+
+#scan{
+    background-color: blue;
+}
+
+#stop{
+    background-color: red;
+}
+
+#reset{
+    background-color: green;
+}
+
+/*---------------------------------------------*/
+
+#greeting{
+    text-align: center;
+    align-content: center;
+}
+
+#content{
+    text-align:center;
+    font-size:18px;
+}
+
+#results{
+    text-align:center;
+    font-weight: 600;
+}
+
+#canvas{
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+}
+
+#please{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#quoteDiv{
+    text-align:center;
+    margin-top:2%;
+}
