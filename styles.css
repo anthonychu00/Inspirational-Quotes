@@ -14,15 +14,15 @@
 }
 
 #scan{
-    background-color: blue;
+    background-color: AliceBlue;
 }
 
 #stop{
-    background-color: red;
+    background-color: LightCoral;
 }
 
 #reset{
-    background-color: green;
+    background-color: PaleGreen;
 }
 
 /*---------------------------------------------*/
@@ -30,6 +30,7 @@
 #greeting{
     text-align: center;
     align-content: center;
+    margin-top:1%;
 }
 
 #content{
@@ -60,5 +61,5 @@
 
 #quoteDiv{
     text-align:center;
-    margin-top:2%;
+    margin-top:1%;
 }
