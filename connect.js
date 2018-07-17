@@ -1,3 +1,4 @@
+setInterval(checkIt, 100);//interval is important so the browser can check what the user has selected each time
 generated=false;
 var faceMode = affdex.FaceDetectorMode.LARGE_FACES;
 
@@ -28,7 +29,7 @@ detector.addEventListener("onInitializeFailure", function() {
   - timestamp: The timestamp of the captured image in seconds.
 */
 detector.addEventListener("onImageResultsSuccess", function (faces, image, timestamp) {
-    $("#greeting").html("Okay, here's what we think.");
+    $("#greeting").html("Okay, here's what we think.  (If you would like to analyze another picture, please reset the detector by clicking reset)");
     if(faces.length>0){
      //$("#results").html(faces.length);
     $("#results").html(JSON.stringify(faces[0].emotions));
@@ -59,13 +60,27 @@ function onStart() {//keep intialize and processing separate
         alert("Please upload an image.");
         return;
     }
-    $("#greeting").html("Please wait, analyzing image.");
+
     if (detector && !detector.isRunning) {
         detector.start();
+        $("#greeting").html("Please wait, analyzing image. (If this takes longer than 8-10 seconds, try refreshing the page)");
         //Get a canvas element from DOM
-}
+    }
+    else
+        alert("A detector is already running.");
 }
 
+function onStop(){
+    if(detector.isRunning)
+        detector.stop();
+        arrayOfEmotions={};
+}
+
+function onReset(){
+    if(detector.isRunning)
+        detector.stop();
+        arrayOfEmotions={};
+}
 
 function otherStuff(){
     var aCanvas = document.getElementById("canvas");
@@ -100,9 +115,24 @@ $("#please").change(function(){
         };       
         FR.readAsDataURL( this.files[0] );
     }
-});
+});                                   
 
-
+function checkIt()
+		{
+		    if($("#please").val().length) 
+		    	;//alert('Files Loaded');
+		    else {
+                //alert('Cancel clicked');
+                var canvas  = document.getElementById("canvas");
+                var context = canvas.getContext("2d");
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                clearPage();
+                $("#greeting").html("How have you been feeling today? Let's have a look at a picture. Make sure it's a close up frontal view, or we may not detect a face.");
+            }
+		    document.body.onfocus = null;
+		    //alert('checked');
+        }	
+        
 function dominantEmotion() {
     var maxVal = -1;
     var domEmotion
@@ -122,16 +152,16 @@ function dominantEmotion() {
     var color;
     var body = $("body");
     if (domEmotion == "joy") {//assigns a color to the background
-        $('body').css("background-color", "yellow");
+        $('body').css("background-color", "LightYellow");
     } 
     else if (domEmotion == "sadness") {
-        $('body').css("background-color", "blue");
+        $('body').css("background-color", "LightBlue");
     } 
     else if (domEmotion == "disgust") {
-        $('body').css("background-color", "green");
+        $('body').css("background-color", "Olive");
     } 
-    else if (domEmotion == "anger") {
-        $('body').css("background-color", "red");
+    else if (domEmotion == "Crimson") {
+        $('body').css("background-color", "Crimson");
     } 
     else if (domEmotion == "surprise") {
         $('body').css("background-color", "plum");
@@ -148,7 +178,7 @@ function dominantEmotion() {
 
 function generateQuote(domin){//generates quote from array of preselected ones
     if (generated) {
-        removePrevious();
+        clearPage();
     }
     var img = new Image();
     var div = document.getElementById('quoteDiv');
@@ -207,4 +237,9 @@ function getRandomSurpriseQuote(){
 function getRandomFearQuote() {
     var images = ["FearQuote1.jpg","FearQuote2.jpg","FearQuote3.jpg","FearQuote4.jpg","FearQuote5.jpg","FearQuote6.jpg","FearQuote7.jpg","FearQuote8.jpg","FearQuote9.jpg","FearQuote10.jpg"];
     return images[Math.floor(Math.random() * images.length)];
+}
+
+function clearPage(){  
+    $('#quoteDiv').html("");
+    $('#results').html("");
 }
