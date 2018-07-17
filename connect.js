@@ -100,23 +100,9 @@ $("#please").change(function(){
         };       
         FR.readAsDataURL( this.files[0] );
     }
-    document.body.onfocus = checkIt;
 });
 
-function checkIt()
-		{
-		    if($("#please").val().length) 
-		    	;
-		    else {
-               
-                var canvas  = document.getElementById("canvas");
-                var context = canvas.getContext("2d");
-                context.clearRect(0, 0, canvas.width, canvas.height);
-            }
-		    document.body.onfocus = null;
-		    
-        }	
-        
+
 function dominantEmotion() {
     var maxVal = -1;
     var domEmotion
