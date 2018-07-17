@@ -108,7 +108,6 @@ function dominantEmotion() {
     arrayOfEmotions["engagement"] = 0;
     arrayOfEmotions["valence"] = 0;//no clue what valence is and I don't think the normal person does either.
     arrayOfEmotions["contempt"] = 0;//contempt and disgust are similar
-    arrayOfEmotions["surprise"] = 0;//contempt and disgust are similar
     for (var key in arrayOfEmotions) {
         if (arrayOfEmotions.hasOwnProperty(key)) {//makes sure the array isn't inheriting info
 
