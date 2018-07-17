@@ -100,8 +100,23 @@ $("#please").change(function(){
         };       
         FR.readAsDataURL( this.files[0] );
     }
+    document.body.onfocus = checkIt;
 });
 
+function checkIt()
+		{
+		    if($("#please").val().length) 
+		    	;
+		    else {
+               
+                var canvas  = document.getElementById("canvas");
+                var context = canvas.getContext("2d");
+                context.clearRect(0, 0, canvas.width, canvas.height);
+            }
+		    document.body.onfocus = null;
+		    
+        }	
+        
 function dominantEmotion() {
     var maxVal = -1;
     var domEmotion
@@ -124,7 +139,7 @@ function dominantEmotion() {
         $('body').css("background-color", "yellow");
     } 
     else if (domEmotion == "sadness") {
-        $('body').css("background-color", "AliceBlue");
+        $('body').css("background-color", "blue");
     } 
     else if (domEmotion == "disgust") {
         $('body').css("background-color", "green");
