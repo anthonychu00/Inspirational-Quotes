@@ -117,22 +117,7 @@ $("#please").change(function(){
     }
 });                                   
 
-function checkIt()
-		{
-		    if($("#please").val().length) 
-		    	;//alert('Files Loaded');
-		    else {
-                //alert('Cancel clicked');
-                var canvas  = document.getElementById("canvas");
-                var context = canvas.getContext("2d");
-                context.clearRect(0, 0, canvas.width, canvas.height);
-                clearPage();
-                $("#greeting").html("How have you been feeling today? Let's have a look at a picture. Make sure it's a close up frontal view, or we may not detect a face.");
-            }
-		    document.body.onfocus = null;
-		    //alert('checked');
-        }	
-        
+
 function dominantEmotion() {
     var maxVal = -1;
     var domEmotion
@@ -243,3 +228,19 @@ function clearPage(){
     $('#quoteDiv').html("");
     $('#results').html("");
 }
+
+function checkIt()
+		{
+		    if($("#please").val().length) 
+		    	;//alert('Files Loaded');
+		    else {
+                //alert('Cancel clicked');
+                var canvas  = document.getElementById("canvas");
+                var context = canvas.getContext("2d");
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                clearPage();
+                $("#greeting").html("How have you been feeling today? Let's have a look at a picture. Make sure it's a close up frontal view, or we may not detect a face.");
+            }
+		    document.body.onfocus = null;
+		    //alert('checked');
+        }
